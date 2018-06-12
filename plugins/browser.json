@@ -1,0 +1,46 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.statmed464761"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.statmed464761"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.statmed464761"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.statmed464761"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.statmed464761"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.statmed464761"
+        },
+        "cordova-plugin-facebook4": {
+            "APP_ID": "690992084435933",
+            "APP_NAME": "HapZar",
+            "PACKAGE_NAME": "com.ionicframework.statmed464761"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "201139529475",
+            "PACKAGE_NAME": "com.ionicframework.HapZar"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.ionicframework.HapZar"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.HapZar"
+        }
+    }
+}
