@@ -65,7 +65,7 @@
   }
 
     $scope.check_login = function(data) {
-      console.log($rootScope.uuid);
+      //console.log($rootScope.uuid);
       //return false;
 
       if(data.email == ''){
@@ -93,14 +93,14 @@
         data.device_token_id=$rootScope.uuid;
         userService.userLogin(data).then(
           function (data) {
-            console.log(data.UserDetails);
+            //console.log(data.UserDetails);
             localStorage.setItem('users', JSON.stringify(data.UserDetails));
             //$cookieStore.put('users', data.UserDetails);
 
             myAuth.updateUserinfo(myAuth.getUserAuthorisation());
             $scope.loggedindetails = myAuth.getUserNavlinks();
             $rootScope.loggedindetailss = myAuth.getUserNavlinks();
-            console.log($scope.loggedindetails);
+            //console.log($scope.loggedindetails);
             $scope.user={};
             $ionicLoading.hide();
             $location.path('/home');
@@ -143,7 +143,7 @@
    $scope.showPopup1();*/
 
    var fbLoginSuccess = function(response) {
-    console.log(3);
+    //console.log(3);
     if (!response.authResponse){
       fbLoginError("Cannot find the authResponse");
       return;
@@ -166,7 +166,7 @@
   };
 
   $scope.fbSubmitWithEmail = function(profileInfo){
-    console.log(profileInfo);
+    //console.log(profileInfo);
        /*userService.fblogin(profileInfo).then(function(authenticated) {
                 if(authenticated.ack==1)
                 {
@@ -183,16 +183,12 @@
             profileInfo.device_token_id='66754gg75fht56';
             userService.fblogin(profileInfo).then(
               function (data) {
-                console.log(data);
-                //return false;
-                console.log(data.UserDetails);
             localStorage.setItem('users', JSON.stringify(data.UserDetails));
             //$cookieStore.put('users', data.UserDetails);
 
             myAuth.updateUserinfo(myAuth.getUserAuthorisation());
             $scope.loggedindetails = myAuth.getUserNavlinks();
             $rootScope.loggedindetailss = myAuth.getUserNavlinks();
-            console.log($scope.loggedindetails);
             $scope.user={};
             $ionicLoading.hide();
             $location.path('/home');
@@ -208,7 +204,7 @@
   }
 
   var fbLoginError = function(error){
-    console.log('fbLoginError', error);
+    //console.log('fbLoginError', error);
     $ionicLoading.hide();
   };
 
@@ -218,7 +214,7 @@
 
     facebookConnectPlugin.api('/me?fields=email,first_name,last_name,gender,picture&access_token=' + authResponse.accessToken, ["public_profile"],
       function (response) {
-                console.log(response);
+                //console.log(response);
         info.resolve(response);
       },
       function (response) {
@@ -230,9 +226,9 @@
   };
 
     $scope.facebookSignIn = function() {
-      console.log(1);
+      //console.log(1);
         facebookConnectPlugin.getLoginStatus(function(success){
-          console.log(2);
+          //console.log(2);
 
                     // Ask the permissions you need. You can learn more about
                     // FB permissions here: https://developers.facebook.com/docs/facebook-login/permissions/v2.4

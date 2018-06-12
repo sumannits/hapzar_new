@@ -4,7 +4,7 @@ app.controller('ProjectManageCtrl', function ($scope,$rootScope,$state,$location
     //alert('pROJECT mAN');
     myAuth.updateUserinfo(myAuth.getUserAuthorisation());
 	  $scope.loggedindetails = myAuth.getUserNavlinks();
-	  console.log($scope.loggedindetails.id);
+	  //console.log($scope.loggedindetails.id);
 	  if($scope.loggedindetails){
 	  	
 	  }else{
@@ -41,7 +41,7 @@ app.controller('ProjectManageCtrl', function ($scope,$rootScope,$state,$location
 
 	  $scope.placeChanged = function() {
 	    $scope.place = this.getPlace();
-	    console.log($scope.place.geometry.location.lat());
+	    //console.log($scope.place.geometry.location.lat());
 	    $scope.store.lat=$scope.place.geometry.location.lat();
 	    $scope.store.lang=$scope.place.geometry.location.lng();
 	    //console.log('Lat:'+$scope.menuInfo.lat+" Lng:"+$scope.menuInfo.lng);
@@ -86,7 +86,7 @@ app.controller('ProjectManageCtrl', function ($scope,$rootScope,$state,$location
 	      function (data) {
 	        
 	        $scope.userInfo = data.UserList;
-	        console.log($scope.userInfo);
+	        //console.log($scope.userInfo);
 	        
 	        //alert($scope.storecategory);
 

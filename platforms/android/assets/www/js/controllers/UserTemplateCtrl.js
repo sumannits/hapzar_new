@@ -26,7 +26,7 @@ app.controller('UserTemplateCtrl', function ($scope,$rootScope,$state,$location,
     });
     userService.getUserInfo($scope.loggedindetails.id).then(
         function (data) {
-          console.log(data);
+          //console.log(data);
           $scope.userinfo = data.UserDetails;
           $rootScope.profile_image_urll =$scope.userinfo[0].profile_image_url;
           $scope.profile_name =$scope.userinfo[0].name;
@@ -38,7 +38,7 @@ app.controller('UserTemplateCtrl', function ($scope,$rootScope,$state,$location,
   }
 
   $scope.geclicked = function() {
-    console.log(11);
+    //console.log(11);
   }
   if($scope.loggedindetails){
     $scope.getUserById();

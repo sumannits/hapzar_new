@@ -369,7 +369,7 @@
           }*/
           //console.log(allContacts);
           angular.forEach(allContacts, function (itemval) {
-            console.log(itemval);
+            //console.log(itemval);
             if(typeof(itemval.phoneNumbers) != 'undifined' && itemval.phoneNumbers !== null){
               var phoneno = itemval.phoneNumbers[0].value;
               //console.log(phoneno);
@@ -394,10 +394,10 @@
                     //console.log('11');
                     if(data.contactlist.length >0){
                         $scope.contactList = data.contactlist;
-                        console.log($scope.contactList);
+                        //console.log($scope.contactList);
                         $ionicLoading.hide();
                     }else{
-                        console.log('12');
+                        //console.log('12');
                         $ionicLoading.hide();
                         $scope.contactList = [];
                         var alertPopup = $ionicPopup.alert({

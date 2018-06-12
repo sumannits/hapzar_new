@@ -12,7 +12,6 @@ app.controller('UserProfileCtrl', function ($scope,$rootScope,$location, $stateP
     });
     userService.getUserInfo($scope.loggedindetails.id).then(
         function (data) {
-          console.log(data);
           //return false;
           $scope.userinfo = data.UserDetails;
 
@@ -60,7 +59,7 @@ app.controller('UserProfileCtrl', function ($scope,$rootScope,$location, $stateP
       }
     userdetails.id=$scope.loggedindetails.id;
 
-    console.log(userdetails);
+    //console.log(userdetails);
     //return false;
     storeService.userEdit(userdetails).then(
       function (data) {

@@ -57,7 +57,7 @@
 
       userService.userSignup(data).then(
         function (data) {
-          console.log(data);
+          //console.log(data);
           $scope.user={};
           $ionicLoading.hide();
           var alertPopup = $ionicPopup.alert({

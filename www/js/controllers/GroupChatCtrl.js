@@ -57,7 +57,7 @@ app.controller('GroupChatCtrl', function ($scope,$rootScope, $stateParams,$locat
 
 if ($scope.loggedindetails) {
         $rootScope.socket = io('http://111.93.169.90:8097', { query: "userId=" + $scope.loggedindetails.id });
-        console.log($rootScope.socket);
+        //console.log($rootScope.socket);
         var room = {
           'room_name': $scope.projectUniqueId
         };
@@ -65,7 +65,7 @@ if ($scope.loggedindetails) {
         if ($scope.projectId) {
             $rootScope.socket.emit('get_connected_users');
             $rootScope.socket.on('sent_connected_users', function (res) {
-                console.log(res);
+                //console.log(res);
                 /*res = res.toString();
                 if (res.includes($scope.project_owner_id)) {
                     $scope.IsOnline = true;
@@ -83,7 +83,7 @@ if ($scope.loggedindetails) {
     });
       userService.groupChatList($stateParams.id).then(
         function (data) {  
-          console.log(data);
+          //console.log(data);
           $scope.clist = data.chat;
           angular.forEach($scope.clist, function (itemval) {
               var obj = { message: itemval.message, id: itemval.id, senderId:itemval.senderId, reciverId:itemval.reciverId, senderName:itemval.senderName, recieverName:itemval.recieverName, projectId:itemval.projectId };
@@ -131,7 +131,7 @@ if ($scope.loggedindetails) {
         $scope.isdiplay = false;
         if ($scope.chatset.email != "") {
           
-            console.log($scope.chatset.email);
+            //console.log($scope.chatset.email);
             var data = '';
             var reciverId = $scope.project_owner_id;
             $scope.msgchat = '';
@@ -142,7 +142,7 @@ if ($scope.loggedindetails) {
 
             data = { uniqueName:$scope.projectUniqueId,unique_no:$scope.unique_no,senderId: $scope.loggedindetails.id,senderName: $scope.senderName, recieverId: $scope.project_owner_id, recieverName:$scope.project_owner_name, message: $scope.msgchat,projectId:$scope.projectId};
             data = JSON.stringify(data);
-            console.log(data);
+            //console.log(data);
             //$rootScope.socket.emit('chat_send', data);
             $rootScope.socket.emit('send:message', data);
             var pushData = { message: $scope.msgchat, id: null,senderId:$scope.loggedindetails.id,recieverId:reciverId,senderName:$scope.senderName, recieverName:$scope.project_owner_name,projectId:$scope.projectId};
@@ -152,7 +152,7 @@ if ($scope.loggedindetails) {
                 }, 400);
             userService.saveGroupChat($scope.loggedindetails.id,reciverId,$scope.msgchat,$scope.projectId).then(
               function (data) {  
-                console.log(data);
+                //console.log(data);
                 
                           
                 },
@@ -193,12 +193,9 @@ if ($scope.loggedindetails) {
 
 
     $rootScope.socket.on('chat_rcv_group', function (data) {
-        console.log('received');
         $scope.show = true;
-        console.log("chat recieved" + data);
         //console.log($scope.userInfo);
         data = JSON.parse(data);
-        console.log($rootScope.messageGroupCheckArray);
         $scope.isPresentt = $rootScope.messageGroupCheckArray.indexOf(parseInt(data.unique_no));
         if($scope.isPresentt == -1){
           $rootScope.messageGroupCheckArray.push(data.unique_no);

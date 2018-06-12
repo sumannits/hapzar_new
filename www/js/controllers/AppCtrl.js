@@ -100,7 +100,7 @@
 
     $scope.loggedindetails = '';
     $rootScope.loggedindetailss = '';
-    console.log($scope.loggedindetails);
+    //console.log($scope.loggedindetails);
     $scope.loggedin = false;
     $scope.notloggedin = true;
     //Notification.success('successfully logged out');

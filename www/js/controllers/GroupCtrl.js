@@ -170,7 +170,6 @@
       
       userService.getuserList($scope.loggedindetails.id).then(
         function (data) {        
-          console.log(data);
           $scope.groupListProject = data.UserList ;  
           angular.forEach($scope.groupListProject, function (itemval) {
                 
@@ -549,10 +548,10 @@
                     //console.log('11');
                     if(data.contactlist.length >0){
                         $scope.contactList = data.contactlist;
-                        console.log($scope.contactList);
+                        //console.log($scope.contactList);
                         $ionicLoading.hide();
                     }else{
-                        console.log('12');
+                        //console.log('12');
                         $ionicLoading.hide();
                         $scope.contactList = [];
                         var alertPopup = $ionicPopup.alert({
