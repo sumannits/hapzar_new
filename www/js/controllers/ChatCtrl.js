@@ -24,13 +24,13 @@
     });
     userService.getUserInfo($stateParams.id).then(
         function (data) {
-          console.log(data);          
+          //console.log(data);          
           $scope.userinfo = data.UserDetails;
           $scope.profile_image_urll =$scope.userinfo[0].profile_image_url;
           $scope.profile_name =$scope.userinfo[0].name;
           $scope.recieverId = $scope.userinfo[0].id;
           //alert($scope.recieverId);
-          console.log($scope.recieverId);
+          //console.log($scope.recieverId);
           $scope.recieverName = $scope.userinfo[0].name;
           $ionicLoading.hide();
         },
@@ -54,11 +54,11 @@ if ($scope.loggedindetails) {
           
         }
         
-        console.log($rootScope.socket);
+        //console.log($rootScope.socket);
         if ($scope.recieverId) {
             $rootScope.socket.emit('get_connected_users');
             $rootScope.socket.on('sent_connected_users', function (res) {
-                console.log(res);
+                //console.log(res);
                 res = res.toString();
                 if (res.includes($scope.recieverId)) {
                     $scope.IsOnline = true;
@@ -76,7 +76,7 @@ if ($scope.loggedindetails) {
     });
       userService.chatList($scope.loggedindetails.id,$stateParams.id).then(
         function (data) {  
-          console.log(data);
+          //console.log(data);
           $scope.clist = data.chat;
           angular.forEach($scope.clist, function (itemval) {
               var obj = { message: itemval.message, id: itemval.id, senderId:itemval.senderId, reciverId:itemval.reciverId };
@@ -123,9 +123,9 @@ if ($scope.loggedindetails) {
       //alert($scope.chatset.email);
       //return false;
         $scope.isdiplay = false;
-        console.log($scope.IsOnline);
+        //console.log($scope.IsOnline);
         if ($scope.chatset.email != "") {
-            console.log($scope.chatset.email);
+            //console.log($scope.chatset.email);
             var data = '';
             var reciverId = $scope.recieverId;
             $scope.msgchat = '';
@@ -138,13 +138,13 @@ if ($scope.loggedindetails) {
 
             data = { senderId: $scope.loggedindetails.id, recieverId: reciverId, message: $scope.msgchat,unique_no: $scope.unique_no};
             data = JSON.stringify(data);
-            console.log(data);
+            //console.log(data);
             $rootScope.socket.emit('chat_send', data);
             var pushData = { message: $scope.msgchat, id: null,senderId:$scope.loggedindetails.id,recieverId:reciverId};
                 $rootScope.ChatList.push(pushData);
             userService.saveChat($scope.loggedindetails.id,reciverId,$scope.msgchat).then(
               function (data) {  
-                console.log(data);
+                //console.log(data);
                 
                 
                 
@@ -186,9 +186,7 @@ if ($scope.loggedindetails) {
 
 
     $rootScope.socket.on('chat_rcv', function (data) {
-        console.log('received');
         $scope.show = true;
-        console.log("chat recieved" + data);
         data = JSON.parse(data);
         
         $scope.isPresent = $rootScope.messageCheckArray.indexOf(parseInt(data.unique_no));

@@ -19,7 +19,7 @@
     $scope.user={};
     $scope.userSignup = function(data) {
 
-    	console.log(data);
+    	//console.log(data);
     	//return false;
       data.device_type='';
       data.device_token_id='';
@@ -31,7 +31,7 @@
 
       userService.userSignup(data).then(
         function (data) {
-          console.log(data);
+          //console.log(data);
           $scope.user={};
           $ionicLoading.hide();
           var alertPopup = $ionicPopup.alert({

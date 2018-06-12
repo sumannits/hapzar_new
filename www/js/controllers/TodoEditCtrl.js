@@ -4,7 +4,7 @@
     //alert('pROJECT mAN');
     myAuth.updateUserinfo(myAuth.getUserAuthorisation());
 	  $scope.loggedindetails = myAuth.getUserNavlinks();
-	  console.log($scope.loggedindetails.id);
+	  //console.log($scope.loggedindetails.id);
 	  if($scope.loggedindetails){
 	  	
 	  }else{
@@ -47,8 +47,6 @@
               $scope.todo.expire_date = '';
             }
             
-            console.log($scope.tododetails.expire_date);
-            console.log($scope.todo);
             //$scope.todo.to_id = $scope.todouserlist[0].id;           
             $ionicLoading.hide();          
         },

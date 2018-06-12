@@ -4,7 +4,7 @@
     //alert('pROJECT mAN');
     myAuth.updateUserinfo(myAuth.getUserAuthorisation());
 	  $scope.loggedindetails = myAuth.getUserNavlinks();
-	  console.log($scope.loggedindetails.id);
+	  //console.log($scope.loggedindetails.id);
 	  if($scope.loggedindetails){
 	  	
 	  }else{

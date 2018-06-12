@@ -25,7 +25,6 @@ app.run(function ($ionicPlatform,$cordovaPushV5,$rootScope,$state) {
         // initialize
         $cordovaPushV5.initialize(options).then(function() {
           // start listening for new notifications
-          console.log('start');
           $cordovaPushV5.onNotification();
           // start listening for errors
           $cordovaPushV5.onError();
@@ -49,7 +48,7 @@ app.run(function ($ionicPlatform,$cordovaPushV5,$rootScope,$state) {
           // data.image,
           // data.additionalData
           //$state.go();
-          console.log(data);
+         // console.log(data);
             if(data.additionalData.encoded.type =='chat'){
                 $state.go('user.chat',{id:data.additionalData.encoded.id})
             }else if(data.additionalData.encoded.type == 'groupchat'){

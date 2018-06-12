@@ -22,7 +22,7 @@ app.controller('AlertAcceptCtrl', function ($scope,$rootScope,$location, $stateP
           if($scope.alertInfo.is_video_link == 1){
               $scope.videoEmbLinkData=$sce.trustAsHtml($scope.alertInfo.embed_video);
           }
-          console.log($scope.alertInfo); 
+          //console.log($scope.alertInfo); 
           if($scope.alertInfo.is_todo_complete != 0){
             userService.getToDoDetail($scope.alertInfo.is_todo_complete).then(
             function (data1) {          

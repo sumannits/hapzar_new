@@ -18,7 +18,7 @@
       userService.getProjectDetail($stateParams.id).then(
         function (data) {          
           $scope.projectInfo = data.PrjList;  
-          console.log($scope.projectInfo);      
+          //console.log($scope.projectInfo);      
           $ionicLoading.hide();
         },
       function (errorMessage) {

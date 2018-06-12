@@ -45,7 +45,7 @@ app.service(
      {
         var store_id=1;
         var user_id = 12;
-        console.log(storelist);
+        //console.log(storelist);
         //return false;
         if(storelist.store_id != ''){
           var apicall = 'appstoreedit';
@@ -62,9 +62,9 @@ app.service(
 
           //headers: { 'Content-Type': 'application/json','accesstoken':accesstoken}
         }).success(function (response) {
-          console.log(response);
+          //console.log(response);
         }).error(function () {
-          console.log(1234);
+          //console.log(1234);
         });
         return( request.then( handleSuccess, handleError ) );
      }
@@ -216,7 +216,7 @@ app.service(
       function userEdit(item) {
         //var store_id=1;
         //var user_id = 12;
-        console.log(item);
+        //console.log(item);
 
         var request = Upload.upload({
           method: "POST",
@@ -228,9 +228,9 @@ app.service(
 
           //headers: { 'Content-Type': 'application/json','accesstoken':accesstoken}
         }).success(function (response) {
-          console.log(response);
+          //console.log(response);
         }).error(function () {
-          console.log(1234);
+          //console.log(1234);
         });
         return( request.then( handleSuccess, handleError ) );
       }
